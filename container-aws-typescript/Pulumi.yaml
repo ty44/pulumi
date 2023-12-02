@@ -1,0 +1,3 @@
+name: container-aws-typescript
+runtime: nodejs
+description: A TypeScript program to deploy a containerized service on AWS
