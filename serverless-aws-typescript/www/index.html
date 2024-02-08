@@ -1,11 +1,7 @@
-<h1>Serverless with Pulumi</h1>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
 
-The current time is: <span id="date"></span>.
+<h1>Hello world</h1>
 
-<script>
-setInterval(() => {
-    fetch('date')
-    .then(response => response.text())
-    .then(data => document.getElementById("date").innerText = data)
-}, 1000);
-</script>
+<p>
+    The response is: <span id="date" hx-get="date" hx-trigger="load" hx-swap="innerText"></span>.
+</p>
