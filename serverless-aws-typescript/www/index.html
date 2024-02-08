@@ -1,11 +1,19 @@
-<h1>Serverless with Pulumi</h1>
+<h1>Hello world</h1>
 
-The current time is: <span id="date"></span>.
+<p>
+    The current time is: <span id="date"></span>.
+</p>
+
+<p>
+    The cached time is: <span id="cached-date"></span>.
+</p>
 
 <script>
-setInterval(() => {
     fetch('date')
     .then(response => response.text())
-    .then(data => document.getElementById("date").innerText = data)
-}, 1000);
+    .then(data => {
+        const result = JSON.parse(data);
+        document.getElementById("date").innerText = result.date;
+        document.getElementById("cached-date").innerText = result.cachedDate;
+    });
 </script>
